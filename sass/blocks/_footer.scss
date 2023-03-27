@@ -1,0 +1,17 @@
+.footer {
+    background-color: #F0F0F4;
+    padding-top: 43px;
+    padding-bottom: 45px;
+}
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info-list li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-info-list a {
+    color: black;
+}

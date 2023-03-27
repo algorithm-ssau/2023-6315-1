@@ -1,0 +1,16 @@
+.social-network a {
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.social-network {
+    font-size: 0px;
+    vertical-align: middle;
+    align-items: baseline;
+}
+
+.img-center {
+    vertical-align: center;
+}

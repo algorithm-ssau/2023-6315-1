@@ -1,0 +1,47 @@
+.button {
+    padding: 10px 16px 9px;
+    background-color: #1C62CD;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-left: -8px;
+}
+.btn-gray {
+    padding: 15px 43px;
+    background-color: #F0F0F4;
+    text-transform: uppercase;
+}
+
+.button--big {
+    padding: 17px 40px;
+}
+
+.input {
+    background-color: #fff;
+    padding-top: 8px;
+    padding-bottom: 9px;
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+.input--gray-bg {
+    display: block;
+    background-color: #F0F0F4;
+    border-radius: 3px;
+    width: 1025px;
+    padding: 15px 0 15px 20px;
+}
+
+.button-category {
+    font-size: 20px;
+    padding: 11px 25px 12px;
+}
+.button-category:active {
+    background-color: #F0F0F4;
+    font-weight: 700;
+}
+.category-wrapper {
+    margin-bottom: 25px;
+}

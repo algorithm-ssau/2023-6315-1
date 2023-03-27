@@ -1,0 +1,64 @@
+.header-nav {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 21px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.header-nav-list {
+    display: flex;
+}
+.header-nav-list-item:not(:last-child) {
+    margin-right: 50px;
+}
+.logo img {
+    margin-right: 136px;
+    margin-left: 92px;
+}
+.header-nav-info {
+    display: flex;
+}
+.header-nav-info p {
+    margin-right: 86px;
+}
+.adress {
+    position: relative;
+}
+.adress::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: -44%;
+    left: -13%;
+    background-image: url(./../../img/icons/Group.svg);
+    background-repeat: no-repeat;
+}
+.user-links {
+    margin-right: 10px;
+}
+
+.header-category-list a, .header-nav-list-item a {
+    color: black;
+}
+
+
+.header-category {
+    background-color: #F0F0F4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 80px;
+}
+.header-category-list {
+    display: flex;
+    justify-content: space-between;
+}
+.header-category-list-item {
+    font-size: 20px;
+    line-height: 24px;
+}
+.header-category-list-item:not(:last-child){
+    margin-right: 60px;
+}

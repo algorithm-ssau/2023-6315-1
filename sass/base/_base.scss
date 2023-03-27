@@ -1,0 +1,24 @@
+html {
+    height: 100%; /* sticky footer */
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%; /* sticky footer */
+    display: flex; /* sticky footer */
+    flex-direction: column; /* sticky footer */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+body > * {
+    flex-shrink: 0; /* sticky footer */
+}
+
+.container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
