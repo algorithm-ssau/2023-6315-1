@@ -1,0 +1,77 @@
+table - customer
+
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (1,'Михайлов Максим','Самара, ул. Московское шоссе, д.4','8(943)080-13-00');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (2,'Прокопов Всеволод','Самара, ул. Солнечная, д.45','8(889)746-12-71');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (3,'Илюхин Евгений','Самара, ул. галактионовская, д.224','8(927)977-88-91');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (4,'Едавкин Степан','Самара, ул. Революционная, д.42','8(929)341-57-96');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (5,'Иванов Иван','Самара, ул. Гагаринская, д.15','8(927)903-80-47');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (6,'Петров Михаил','Самара, ул. Шольца, д. 12','8(817)984-14-10');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (7,'Михайлов Петр','Самара, ул. Гая, д.43','8(929)011-40-18');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (8,'Карпов Анатолий','Самара, ул. Авроры, д.127д','8(999)992-40-76');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (9,'Корнеев Корней','Самара, ул. Киевская, д.4','8(927)863-90-30');
+INSERT INTO motorcycleshop.customer (`idcustomer`,`customer_name`,`customer_address`,`customer_phone`) VALUES (10,'Корнеев Алексей',NULL,'8(917)740-15-77');
+
+table - delivery
+
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (1,'СДЭК','8(927)485-19-38');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (2,'Яндекс.Курьер','8(905)587-79-02');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (3,'ОЗОН','8(927)022-26-18');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (4,'WildBerries','8(929)247-01-40');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (5,'KazanExpress','8(902)662-68-59');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (6,'Почта России','8(917)700-94-70');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (7,'Орлы Экспресс','8(929)566-15-21');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (8,'Голубиная почта','8(917)664-61-16');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (9,'Деловые линии','8(927)508-22-34');
+INSERT INTO motorcycleshop.delivery (`iddelivery`,`delivery_name`,`delivery_phone`) VALUES (10,'Прямые маршруты', '8(927)621-20-93');
+
+table - type_of_delivery
+
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (1,'Эконом',1,100);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (2,'Комфорт',2,200);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (3,'Бизнес',3,300);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (4,'Экспресс',1,250);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (5,'Бесплатная',1,0);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (6,'VIP',2,500);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (7,'Эконом+',3,150);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (8,'Обычная',4,50);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (9,'Специальная',5,150);
+INSERT INTO motorcycleshop.type_of_delivery (`idtype_of_delivery`,`name_of_type`,`delivery_iddelivery`,`type_of_delivery_price`) VALUES (10,'Круиз',6,200);
+
+table - type_of_product
+
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (1,'Квадроциклы');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (2,'Гидроциклы');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (3,'Катеры');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (4,'Снегоходы');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (5,'Вездеходы');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (6,'Двигатели');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (7,'Запчасти');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (8,'Электроника');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (9,'Инструменты');
+INSERT INTO motorcycleshop.type_of_product (`idtype_of_product`,`name_of_type`) VALUES (10, 'Аксессуары');
+
+table - product
+
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (1,1,'Black\\Mango',1049500,'BRP','EarthDoo GTI','Hit',130,9);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (2,1,'Long Blue Metallic',1100000,'BRP','EarthDoo GTR','Sale',155,5);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (3,1,'California Green',1000000,'Spark3','EarthDoo GTI','New',90,4);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (4,2,'Liquid Metal',1100475,'BRP','SeaDoo GTX',NULL,155,3);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (5,2,'Chili Pepper',1323700,'Spark2','SeaDoo GTS',NULL,125,1);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (6,10,NULL,9800,NULL,'Рюкзак водонепроницаемый','New',NULL,10);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (7,4,'Ace Vanilla',1229711,'Spark2','SnowDoo',NULL,150,0);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (8,5,'Ace Pineapple',587440,'Spark3','EveryDoo','Sale',100,10);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (9,6,NULL,50000,'Suzuki','Df9.9BRS',NULL,155,0);
+INSERT INTO motorcycleshop.product (`idproduct`,`type_of_product_idtype_of_product`,`product_colour`,`product_price`,`product_brand`,`product_model`,`product_action`,`product_power`,`product_count`) VALUES (10,7,NULL,25000,'SeaWater','Аудио-система','Hit',NULL,5);
+
+table - order
+
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (1,1,1,'Позвоните перед доставкой 8(929)718-14-37','2023.03.03');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (2,2,1,'','2023.03.02');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (3,3,2,'Постучите в дверь','2023.02.04');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (3,4,2,'Замените двигатель на более мощный','2023.06.01');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (4,5,3,NULL,'2023.05.08');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (5,6,4,'Добавьте аудио-систему','2023.04.16');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (6,7,5,NULL,'2023.05.14');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (6,8,6,NULL,'2023.05.31');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (10,9,6,'Положите в рюкзак визитку','2023.04.22');
+INSERT INTO motorcycleshop.order (`product_idproduct`,`customer_idcustomer`,`delivery_iddelivery`,`order_comment`,`order_date`) VALUES (10,10,7,NULL,'2023.04.27');
