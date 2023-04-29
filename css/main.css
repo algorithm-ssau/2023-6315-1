@@ -375,4 +375,18 @@ body > * {
   right: 0px;
   bottom: 0px; }
 
+.error {
+  padding-bottom: 80px; }
+
+.error-wrapper {
+  text-align: center; }
+
+.error-wrapper h1 {
+  margin-bottom: 10px;
+  font-size: 60px;
+  font-weight: 700; }
+
+.error-wrapper p {
+  font-size: 18px; }
+
 /*# sourceMappingURL=main.css.map */
