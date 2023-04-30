@@ -1,0 +1,129 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema motorcycleShop
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema motorcycleShop
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `motorcycleShop` DEFAULT CHARACTER SET utf8 ;
+USE `motorcycleShop` ;
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`type_of_product`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`type_of_product` (
+  `idtype_of_product` INT NOT NULL,
+  `name_of_type` VARCHAR(45) NULL,
+  PRIMARY KEY (`idtype_of_product`),
+  UNIQUE INDEX `idtype_of_product_UNIQUE` (`idtype_of_product` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`product`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`product` (
+  `idproduct` INT NOT NULL,
+  `type_of_product_idtype_of_product` INT NOT NULL,
+  `product_colour` VARCHAR(45) NULL,
+  `product_price` INT NULL,
+  `product_brand` VARCHAR(45) NULL,
+  `product_model` VARCHAR(45) NULL,
+  `product_action` VARCHAR(45) NULL,
+  `product_power` INT NULL,
+  `product_count` INT NULL,
+  PRIMARY KEY (`idproduct`),
+  UNIQUE INDEX `idproduct_UNIQUE` (`idproduct` ASC) VISIBLE,
+  INDEX `fk_product_type_of_product_idx` (`type_of_product_idtype_of_product` ASC) VISIBLE,
+  CONSTRAINT `fk_product_type_of_product`
+    FOREIGN KEY (`type_of_product_idtype_of_product`)
+    REFERENCES `motorcycleShop`.`type_of_product` (`idtype_of_product`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`customer`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`customer` (
+  `idcustomer` INT NOT NULL,
+  `customer_name` VARCHAR(45) NULL,
+  `customer_address` VARCHAR(45) NULL,
+  `customer_phone` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcustomer`),
+  UNIQUE INDEX `idcustomer_UNIQUE` (`idcustomer` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`delivery`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`delivery` (
+  `iddelivery` INT NOT NULL,
+  `delivery_name` VARCHAR(45) NULL,
+  `delivery_phone` VARCHAR(45) NULL,
+  PRIMARY KEY (`iddelivery`),
+  UNIQUE INDEX `iddelivery_UNIQUE` (`iddelivery` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`order` (
+  `product_idproduct` INT NOT NULL,
+  `customer_idcustomer` INT NOT NULL,
+  `delivery_iddelivery` INT NOT NULL,
+  `order_comment` VARCHAR(45) NULL,
+  `order_date` DATETIME NULL,
+  PRIMARY KEY (`product_idproduct`, `customer_idcustomer`, `delivery_iddelivery`),
+  INDEX `fk_order_product1_idx` (`product_idproduct` ASC) VISIBLE,
+  INDEX `fk_order_customer2_idx` (`customer_idcustomer` ASC) VISIBLE,
+  INDEX `fk_order_delivery1_idx` (`delivery_iddelivery` ASC) VISIBLE,
+  CONSTRAINT `fk_order_product1`
+    FOREIGN KEY (`product_idproduct`)
+    REFERENCES `motorcycleShop`.`product` (`idproduct`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_order_customer2`
+    FOREIGN KEY (`customer_idcustomer`)
+    REFERENCES `motorcycleShop`.`customer` (`idcustomer`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_order_delivery1`
+    FOREIGN KEY (`delivery_iddelivery`)
+    REFERENCES `motorcycleShop`.`delivery` (`iddelivery`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `motorcycleShop`.`type_of_delivery`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `motorcycleShop`.`type_of_delivery` (
+  `idtype_of_delivery` INT NOT NULL,
+  `name_of_type` VARCHAR(45) NULL,
+  `delivery_iddelivery` INT NOT NULL,
+  `type_of_delivery_price` INT NULL,
+  PRIMARY KEY (`idtype_of_delivery`),
+  INDEX `fk_type_of_delivery_delivery1_idx` (`delivery_iddelivery` ASC) VISIBLE,
+  CONSTRAINT `fk_type_of_delivery_delivery1`
+    FOREIGN KEY (`delivery_iddelivery`)
+    REFERENCES `motorcycleShop`.`delivery` (`iddelivery`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
