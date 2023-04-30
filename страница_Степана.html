@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница товара</title>
-    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
@@ -42,7 +41,27 @@
                 </ul>
             </nav>
         </div>
-        <button class="header-nav-list-item"><a href="http://25.19.103.131:5000/customer/">Переход на следующую ссылку</a></button>
+        <button><a href="http://25.19.103.131:5000/customer/">Переход на следующую ссылку</a></button>
+        <p><b>Ваше имя:</b><br><input type="text" name= "name" id = "name" size="40"></p>
+        <p><b>Ваш адрес:</b><br><input type="text" name = "address" id = "address" size="40"></p>
+        <p><b>Ваше телефон:</b><br><input type="text" name = "phone" id = "phone" size="40"></p>
+        <button type="submit" id="submitButton"> Submit</button>
+        <script>
+            var bttn = document.getElementById("submitButton");
+
+            function addCustomer() {
+                var name = document.getElementById("name").value;
+                var address = document.getElementById("address").value;
+                var phone = document.getElementById("phone").value;
+
+                var xhr = new XMLHttpRequest();
+                var params = name + '&' + address + '&' + phone;
+                xhr.open("GET", 'http://25.19.103.131:5000/customer_add/' + params, true);
+                xhr.send();
+            }
+
+            bttn.onclick = addCustomer;
+        </script>
     </header>
 </body>
 </html>
