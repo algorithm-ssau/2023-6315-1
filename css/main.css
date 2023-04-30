@@ -149,8 +149,7 @@ body > * {
 .header-category {
   background-color: #F0F0F4;
   padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 80px; }
+  padding-bottom: 15px; }
 
 .header-category-list {
   display: flex;
@@ -376,7 +375,8 @@ body > * {
   bottom: 0px; }
 
 .error {
-  padding-bottom: 80px; }
+  padding-bottom: 80px;
+  padding-top: 80px; }
 
 .error-wrapper {
   text-align: center; }
@@ -388,5 +388,18 @@ body > * {
 
 .error-wrapper p {
   font-size: 18px; }
+
+.shop-info {
+  padding-bottom: 80px;
+  padding-top: 80px; }
+
+.shop-info-wrapper h1 {
+  margin-bottom: 20px; }
+
+.shop-info-wrapper p {
+  margin-bottom: 30px; }
+
+.shop-info-map {
+  margin-bottom: 30px; }
 
 /*# sourceMappingURL=main.css.map */

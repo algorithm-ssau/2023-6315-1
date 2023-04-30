@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ошибка 404</title>
+    <title>Магазины</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <header>
-
         <div class="container">
             <div class="header-nav">
                 <ul class="header-nav-list">
-                    <li class="header-nav-list-item"><a href="#">Магазины</a></li>
+                    <li class="header-nav-list-item"><a href="./shop.html">Магазины</a></li>
                     <li class="header-nav-list-item"><a href="./contacts.html">Контакты</a></li> 
-                    <li class="header-nav-list-item"><a href="#">Доставка товара</a></li>                                  
+                    <li class="header-nav-list-item"><a href="./404.html">Доставка товара</a></li>                                  
                 </ul>
                 <div class="logo">
                     <img src="./img/icons/logo.svg" alt="Логотип">
@@ -28,7 +28,7 @@
                         <a href=""><img src="./img/icons/cart.svg" alt="Корзина"></a>
                     </div>
                 </div>
-
+    
             </div>
             <nav class="header-category">
                 <ul class="header-category-list">
@@ -45,16 +45,37 @@
         </div>
     </header>
 
-    <main class="error">
+    <section class="shop-info">
         <div class="container">
-            <div class="error-wrapper">
-                <h1>Ошибка 404</h1>
-                <p>Такой страницы не существует. <a href="./index.html"> Вернитесь на главную</a></p> 
+            <div class="shop-info-wrapper">
+                <h1 class="title-2">Наши магазины:</h1>
+                <p>Ново-Вокзальная улица, 124</p>
+                <p>График работы: <br>
+                пн-сб: c 9:00 до 20:00 <br>
+                вс: выходной</p>
             </div>
+            <div class="shop-info-map">
+                <div style="position:relative;overflow:hidden;">
+                    <a href="https://yandex.ru/maps/51/samara/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Самара</a>
+                    <a href="https://yandex.ru/maps/51/samara/house/novo_vokzalnaya_ulitsa_124/YUkYdAZmTkwCQFtpfX5ydn5iZw==/?ll=50.218495%2C53.236789&utm_medium=mapframe&utm_source=maps&z=17.25" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ново-Вокзальная улица, 124 — Яндекс Карты</a>
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=50.218495%2C53.236789&mode=whatshere&whatshere%5Bpoint%5D=50.216630%2C53.237315&whatshere%5Bzoom%5D=17&z=17.25" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
+            </div>
+            <div class="shop-info-wrapper">
+                <p>Революционная улица, 64к1</p>
+                <p>График работы: <br>
+                пн-сб: c 9:00 до 20:00 <br>
+                вс: выходной</p>
+            </div>
+            <div class="shop-info-map">
+                <div style="position:relative;overflow:hidden;">
+                    <a href="https://yandex.ru/maps/51/samara/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Самара</a>
+                    <a href="https://yandex.ru/maps/51/samara/house/revolyutsionnaya_ulitsa_64k1/YUkYdwBmTUcDQFtpfX5xeH9jZw==/?ll=50.177845%2C53.209582&utm_medium=mapframe&utm_source=maps&z=17.2" style="color:#eee;font-size:12px;position:absolute;top:14px;">Революционная улица, 64к1 — Яндекс Карты</a>
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=50.177845%2C53.209582&mode=whatshere&whatshere%5Bpoint%5D=50.176586%2C53.209219&whatshere%5Bzoom%5D=17&z=17.2" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
+            </div>       
         </div>
-    </main>
-
-    
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -91,5 +112,4 @@
             </div>            
         </div>        
     </footer>
-
 </body>
