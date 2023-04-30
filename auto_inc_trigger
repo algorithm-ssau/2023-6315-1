@@ -1,0 +1,9 @@
+#DROP TRIGGER customer_auto_inc;
+
+CREATE TRIGGER customer_auto_inc BEFORE INSERT ON customer FOR EACH ROW
+SET NEW.idcustomer = (
+SELECT MAX(idcustomer)
+FROM customer
+) + 1 ;
+
+INSERT INTO customer (idcustomer, customer_name, customer_address, customer_phone) VALUES (0, 'тест', 'тест', '8021');
