@@ -31,6 +31,22 @@ def customer():
         jsonobj.update(jsonobj1)
     return jsonify(jsonobj)
 
+
+@app.route("/customer_add/<name>&<address>&<phone>", methods=['GET'])
+def customer_add(name, address, phone):
+    insert_query = f"INSERT INTO customer (idcustomer, customer_name, customer_address, customer_phone) VALUES " \
+                   f"(0, '{name}', '{address}', '{phone}');"
+    con = mysql.connect()
+    cursor = con.cursor()
+    try:
+        cursor.execute(insert_query)
+        con.commit()
+        return '200'
+    except Exception as e:
+        print("Problem inserting into db: " + str(e))
+        return '500'
+
+
 def serverFlaskStart():
     app.run(debug=True, host='25.19.103.131')
 

@@ -42,6 +42,26 @@
             </nav>
         </div>
         <button><a href="http://25.19.103.131:5000/customer/">Переход на следующую ссылку</a></button>
+        <p><b>Ваше имя:</b><br><input type="text" name= "name" id = "name" size="40"></p>
+        <p><b>Ваш адрес:</b><br><input type="text" name = "address" id = "address" size="40"></p>
+        <p><b>Ваше телефон:</b><br><input type="text" name = "phone" id = "phone" size="40"></p>
+        <button type="submit" id="submitButton"> Submit</button>
+        <script>
+            var bttn = document.getElementById("submitButton");
+
+            function addCustomer() {
+                var name = document.getElementById("name").value;
+                var address = document.getElementById("address").value;
+                var phone = document.getElementById("phone").value;
+
+                var xhr = new XMLHttpRequest();
+                var params = name + '&' + address + '&' + phone;
+                xhr.open("GET", 'http://25.19.103.131:5000/customer_add/' + params, true);
+                xhr.send();
+            }
+
+            bttn.onclick = addCustomer;
+        </script>
     </header>
 </body>
 </html>
