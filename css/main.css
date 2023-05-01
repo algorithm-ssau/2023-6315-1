@@ -402,4 +402,10 @@ body > * {
 .shop-info-map {
   margin-bottom: 30px; }
 
+.product-page-wrapper {
+  display: flex; }
+
+.product-page-img {
+  background-color: #dd1616; }
+
 /*# sourceMappingURL=main.css.map */
