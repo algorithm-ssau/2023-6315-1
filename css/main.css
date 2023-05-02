@@ -205,7 +205,8 @@ body > * {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-left: -8px; }
+  margin-left: -8px;
+  border-radius: 3px; }
 
 .btn-gray {
   padding: 15px 43px;
@@ -214,20 +215,6 @@ body > * {
 
 .button--big {
   padding: 17px 40px; }
-
-.input {
-  background-color: #fff;
-  padding-top: 8px;
-  padding-bottom: 9px;
-  padding-left: 12px;
-  font-size: 14px; }
-
-.input--gray-bg {
-  display: block;
-  background-color: #F0F0F4;
-  border-radius: 3px;
-  width: 1025px;
-  padding: 15px 0 15px 20px; }
 
 .button-category {
   font-size: 20px;
@@ -254,7 +241,8 @@ body > * {
   vertical-align: center; }
 
 .category {
-  margin-bottom: 80px; }
+  padding-bottom: 80px;
+  padding-top: 80px; }
 
 .category-card {
   display: flex;
@@ -402,10 +390,86 @@ body > * {
 .shop-info-map {
   margin-bottom: 30px; }
 
+.input {
+  padding-top: 8px;
+  padding-bottom: 9px;
+  padding-left: 12px;
+  font-size: 14px;
+  background-color: #EEEEEE;
+  border: 1px solid #C0C0C0;
+  border-radius: 6px; }
+
+.input--gray-bg {
+  display: block;
+  background-color: #F0F0F4;
+  border-radius: 3px;
+  width: 1025px;
+  padding: 15px 0 15px 20px; }
+
+.registration {
+  margin-left: 36%;
+  padding-bottom: 80px;
+  padding-top: 80px; }
+
+.registration h1 {
+  margin-left: 150px;
+  margin-bottom: 20px; }
+
+.registration-wrapper {
+  width: 485px; }
+
+.registration-wrapper > * {
+  margin-bottom: 20px; }
+
+.registration-wrapper p {
+  box-sizing: border-box;
+  font-size: 18px;
+  color: black;
+  margin-right: 30px; }
+
+.registration-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.product-page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #2F3035; }
+
 .product-page-wrapper {
-  display: flex; }
+  display: flex;
+  gap: 100px; }
 
 .product-page-img {
-  background-color: #dd1616; }
+  padding-top: 64px;
+  text-align: center; }
+
+.product-page-img img {
+  margin-bottom: 60px; }
+
+.product-page-info p {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px; }
+
+.product-page-info h1 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #2F3035; }
+
+.product-page-list {
+  margin-bottom: 20px;
+  width: 436px; }
+
+.product-page-list > * {
+  margin-bottom: 15px; }
+
+.product-page-list-item {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2F3035; }
 
 /*# sourceMappingURL=main.css.map */

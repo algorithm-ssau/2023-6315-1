@@ -1,0 +1,28 @@
+.registration {
+    margin-left: 36%;
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
+.registration h1 {
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+    
+.registration-wrapper {
+    width: 485px;
+}
+.registration-wrapper > * {
+    margin-bottom: 20px;
+}
+.registration-wrapper p {
+    box-sizing: border-box;
+    font-size: 18px;
+    color: black;
+    margin-right: 30px;
+}
+
+.registration-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
