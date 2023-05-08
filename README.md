@@ -54,10 +54,10 @@
  
 ## Авторы работы  
 
-*Frontend* <br>
-* Едавкин С.И. 
-* Прокопов В.А.   
+*Frontend*  
+* [Едавкин С.И.](https://github.com/StePUNK2002)  
+* [Прокопов В.А.](https://github.com/ProkopovVsevolod)  
 
-*Backend* <br>
-* Михайлов М.С.  
-* Илюхин Е.В.
+*Backend*  
+* [Михайлов М.С.](https://github.com/mikhailovmc)  
+* [Илюхин Е.В.](https://github.com/IVEvgenii)
