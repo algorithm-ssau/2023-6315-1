@@ -1,0 +1,8 @@
+#DELETE FROM motorcycleshop.order WHERE delivery_iddelivery = 10;
+#DROP TRIGGER product_minus_trigger;
+
+CREATE TRIGGER product_minus_trigger AFTER INSERT ON motorcycleshop.order FOR EACH ROW
+UPDATE product SET product_count = product_count - 1
+WHERE idproduct = new.product_idproduct;
+
+INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery, order_comment, order_date) VALUES (10, 10, 10, 'тест', '2023.05.10');
