@@ -107,17 +107,27 @@ def delivery():
 
 @app.route("/order_add/<idproduct>&<idcustomer>&<iddelivery>&<comment>&<date>", methods=['GET'])
 def order_add(idproduct, idcustomer, iddelivery, comment, date):
-    insert_query = f"INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery, order_comment, order_date) VALUES " \
-                   f"('{idproduct}', '{idcustomer}', '{iddelivery}', '{comment}', '{date}');"
-    #дописать поиск айди в доставках
+    select_querry = f"SELECT delivery_iddelivery FROM type_of_delivery WHERE idtype_of_delivery = '{iddelivery}'"
     con = mysql.connect()
     cursor = con.cursor()
+    id_res = ""
     try:
-        cursor.execute(insert_query)
-        con.commit()
-        return '200'
+        cursor.execute(select_querry)
+        id_res = cursor.fetchall()
     except Exception as e:
-        print("Problem inserting into db: " + str(e))
+        print("Problem selecting into db: " + str(e))
+    if (id_res != ""):
+        insert_query = f"INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery, order_comment, order_date) VALUES " \
+                   f"('{idproduct}', '{idcustomer}', '{id_res[0][0]}', '{comment}', '{date}');"
+
+        try:
+            cursor.execute(insert_query)
+            con.commit()
+            return '200'
+        except Exception as e:
+            print("Problem inserting into db: " + str(e))
+            return '500'
+    else:
         return '500'
 
 
