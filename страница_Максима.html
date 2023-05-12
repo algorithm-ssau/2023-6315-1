@@ -24,9 +24,12 @@
             var params = name + '&' + address + '&' + phone;
             xhr.open("GET", 'http://25.19.103.131:5000/customer_add/' + params, true);
             xhr.send();
-
-
-            bttn.onclick = addCustomer;
+            xhr.onload = function() {
+                console.log(xhr.status);
+                console.log(xhr.response);
+            }
+        }
+        bttn.onclick = addCustomer;
         </script>
     <p></p>
     <p><b>id товара:</b><br><input type="text" name= "idproduct" id = "idproduct" size="40"></p>
@@ -51,6 +54,25 @@
             }
 
         bttn.onclick = addOrder;
-        </script>
+    </script>
+    <p></p>
+    <p><b>id покупателя:</b><br><input type="text" name = "idcustomer1" id = "idcustomer1" size="40"></p>
+    <p><button type="submit" id="showOrderButton">Посмотреть заказы</button></p>
+    <script>
+        var bttn = document.getElementById("showOrderButton");
+        function showOrder() {
+            var idcustomer = document.getElementById("idcustomer1").value;
+
+            var xhr = new XMLHttpRequest();
+            var params = idcustomer;
+            xhr.open("GET", 'http://25.19.103.131:5000/order/' + params, true);
+            xhr.send();
+            xhr.onload = function() {
+                console.log(xhr.response);
+            }
+        }
+
+        bttn.onclick = showOrder;
+    </script>
 </body>
 </html>

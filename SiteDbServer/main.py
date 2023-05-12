@@ -1,9 +1,11 @@
 from flask import app, Flask, jsonify
+from flask_cors import CORS
 from flaskext.mysql import MySQL
 
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
+cors = CORS(app, origins=["http://localhost:63342"])
 
 mysql = MySQL()
 # MySQL configurations
@@ -53,9 +55,10 @@ def customer_add(name, address, phone):
     except Exception as e:
         print("Problem selecting into db: " + str(e))
     if res != 'null':
-        return '200' + f'{res[0][0]}'
+
+        return f'{res[0][0]}'
     else:
-        return '500'
+        return '0'
 
 
 @app.route("/product/", methods=['GET'])
@@ -117,8 +120,9 @@ def order_add(idproduct, idcustomer, iddelivery, comment, date):
     except Exception as e:
         print("Problem selecting into db: " + str(e))
     if (id_res != ""):
-        insert_query = f"INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery, order_comment, order_date) VALUES " \
-                   f"('{idproduct}', '{idcustomer}', '{id_res[0][0]}', '{comment}', '{date}');"
+        insert_query = f"INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery," \
+                       f" order_comment, order_date, idorder) VALUES ('{idproduct}', '{idcustomer}', '{id_res[0][0]}'," \
+                       f" '{comment}', '{date}', 0);"
 
         try:
             cursor.execute(insert_query)
@@ -131,16 +135,32 @@ def order_add(idproduct, idcustomer, iddelivery, comment, date):
         return '500'
 
 
+@app.route("/order/<idcustomer>", methods=['GET'])
+def order(idcustomer):
+    select_query = f"SELECT idorder, product_brand, product_model, delivery_name, order_comment, order_date " \
+                   f"FROM product JOIN motorcycleshop.order ON idproduct = product_idproduct " \
+                   f"JOIN delivery ON delivery_iddelivery = iddelivery " \
+                   f"WHERE customer_idcustomer = '{idcustomer}';"
+    cursor = mysql.get_db().cursor()
+    cursor.execute(select_query)
+    res = cursor.fetchall()
+    jsonobj = dict()
+    for row in res:
+        jsonobj1 = {
+            row[0]: {
+                "brand": row[1],
+                "model": row[2],
+                "delivery_name": row[3],
+                "comment": row[4],
+                "date": row[5],
+            }
+        }
+        jsonobj.update(jsonobj1)
+    return jsonify(jsonobj)
+
+
 def serverflaskstart():
     app.run(debug=True, host='25.19.103.131')
-
-
-def select_from_db(connection, table_name):
-    select_query = f"SELECT * FROM motorcycleshop.{table_name}"
-    with connection.cursor() as cursor:
-        cursor.execute(select_query)
-        result = cursor.fetchall()
-    return result
 
 
 if __name__ == '__main__':
