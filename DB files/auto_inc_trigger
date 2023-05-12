@@ -7,3 +7,11 @@ FROM customer
 ) + 1 ;
 
 INSERT INTO customer (idcustomer, customer_name, customer_address, customer_phone) VALUES (0, 'тест', 'тест', '8021');
+
+CREATE TRIGGER order_auto_inc BEFORE INSERT ON motorcycleshop.order FOR EACH ROW
+SET NEW.idorder = (
+SELECT MAX(idorder)
+FROM motorcycleshop.order
+) + 1 ;
+
+INSERT INTO motorcycleshop.order (product_idproduct, customer_idcustomer, delivery_iddelivery, order_comment, order_date, idorder) VALUES (10, 10, 10, 'тест', '2023.05.12', 9);
