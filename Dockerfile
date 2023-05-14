@@ -1,0 +1,4 @@
+#Подключаем образ на основе которого будем все делать
+FROM nginx:alpine
+#Указываем путь
+COPY . /usr/share/nginx/html
