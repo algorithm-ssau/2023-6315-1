@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACP,cAAc,EAAE,IAAI;EACpB,WAAW,EAAE,IAAI;;AAGrB,qBAAsB;EAClB,aAAa,EAAE,IAAI;;AAEvB,oBAAqB;EACjB,aAAa,EAAE,IAAI;;AAGvB,cAAe;EACX,aAAa,EAAE,IAAI",
+"sources": ["../../sass/blocks/info-shop.scss"],
+"names": [],
+"file": "info-shop.css"
+}

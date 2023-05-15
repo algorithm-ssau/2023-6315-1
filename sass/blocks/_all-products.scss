@@ -1,0 +1,10 @@
+.all-products {
+    padding-top: 80px;
+}
+
+.all-product__section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+}

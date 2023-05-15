@@ -2,35 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Функционал сайта</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница чего-то на сайте</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <button><a href="http://25.19.103.131:5000/product/">Вывести список товаров</a></button>
     <button><a href="http://25.19.103.131:5000/customer/">Вывести список покупателей</a></button>
     <button><a href="http://25.19.103.131:5000/delivery/">Вывести список доставок</a></button>
     <br>
-    <p><b>Ваше имя:</b><br><input type="text" name= "name" id = "name" size="40"></p>
-    <p><b>Ваш адрес:</b><br><input type="text" name = "address" id = "address" size="40"></p>
-    <p><b>Ваше телефон:</b><br><input type="text" name = "phone" id = "phone" size="40"></p>
-    <button type="submit" id="submitButton"> Submit</button>
-    <script>
-        var bttn = document.getElementById("submitButton");
-        function addCustomer() {
-            var name = document.getElementById("name").value;
-            var address = document.getElementById("address").value;
-            var phone = document.getElementById("phone").value;
-
-            var xhr = new XMLHttpRequest();
-            var params = name + '&' + address + '&' + phone;
-            xhr.open("GET", 'http://25.19.103.131:5000/customer_add/' + params, true);
-            xhr.send();
-            xhr.onload = function() {
-                console.log(xhr.status);
-                console.log(xhr.response);
-            }
-        }
-        bttn.onclick = addCustomer;
-        </script>
+    
+    <section class="registration">
+        <h1 class="title-2">Регистрация</h1>
+            <div class="registration-wrapper">
+                <div class="registration-input">
+                    <p>Ваше имя:</p>
+                    <input class="input" type="text" name= "name" id = "name" size="40">
+                </div>
+                <div class="registration-input">
+                    <p>Ваш адрес:</p>
+                    <input class="input" type="text" name = "address" id = "address" size="40">
+                </div>
+                <div class="registration-input">
+                    <p>Ваше телефон:</p>
+                <input class="input" type="text" name = "phone" id = "phone" size="40">
+                </div>
+                <button class="button" type="submit" id="submitButton">Зарегистрироваться</button>
+            </div>
+            <a href="http://25.19.103.131:5000/customer/">Переход на следующую ссылку</a>      
+    </section>
+    
     <p></p>
     <p><b>id товара:</b><br><input type="text" name= "idproduct" id = "idproduct" size="40"></p>
     <p><b>id покупателя:</b><br><input type="text" name = "idcustomer" id = "idcustomer" size="40"></p>
@@ -74,5 +76,7 @@
 
         bttn.onclick = showOrder;
     </script>
+
+    <script src="./js/registration.js"></script>
 </body>
 </html>

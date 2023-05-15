@@ -472,4 +472,13 @@ body > * {
   padding-bottom: 8px;
   border-bottom: 1px solid #2F3035; }
 
+.all-products {
+  padding-top: 80px; }
+
+.all-product__section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 28px; }
+
 /*# sourceMappingURL=main.css.map */
