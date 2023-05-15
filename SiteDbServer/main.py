@@ -63,8 +63,8 @@ def customer_add(name, address, phone):
 
 @app.route("/product/", methods=['GET'])
 def product():
-    select_query = f"SELECT idproduct, name_of_type AS product_type, product_colour, product_price, product_brand," \
-                   f" product_model, product_action, product_power, product_count FROM product JOIN type_of_product" \
+    select_query = f"SELECT idproduct, name_of_type AS product_type, product_price, product_brand," \
+                   f" product_model, product_action, product_power, product_count, product_image FROM product JOIN type_of_product" \
                    f" ON idtype_of_product = type_of_product_idtype_of_product;"
     cursor = mysql.get_db().cursor()
     cursor.execute(select_query)
@@ -74,13 +74,13 @@ def product():
         jsonobj1 = {
             row[0]: {
                 "type": row[1],
-                "colour": row[2],
-                "price": row[3],
-                "brand": row[4],
-                "model": row[5],
-                "action": row[6],
-                "power": row[7],
-                "count": row[8],
+                "price": row[2],
+                "brand": row[3],
+                "model": row[4],
+                "action": row[5],
+                "power": row[6],
+                "count": row[7],
+                "image": row[8],
             }
         }
         jsonobj.update(jsonobj1)
