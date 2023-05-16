@@ -5,7 +5,7 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-cors = CORS(app, origins=["http://localhost:63342"])
+cors = CORS(app, origins=["http://localhost:63342", "http://127.0.0.1:5500"])
 
 mysql = MySQL()
 # MySQL configurations
@@ -64,7 +64,7 @@ def customer_add(name, address, phone):
 @app.route("/product/", methods=['GET'])
 def product():
     select_query = f"SELECT idproduct, name_of_type AS product_type, product_price, product_brand," \
-                   f" product_model, product_action, product_power, product_count, product_image FROM product JOIN type_of_product" \
+                   f" product_model, product_action, product_power, product_count, product_image, product_date FROM product JOIN type_of_product" \
                    f" ON idtype_of_product = type_of_product_idtype_of_product;"
     cursor = mysql.get_db().cursor()
     cursor.execute(select_query)
@@ -81,6 +81,7 @@ def product():
                 "power": row[6],
                 "count": row[7],
                 "image": row[8],
+                "date": row[9]
             }
         }
         jsonobj.update(jsonobj1)
@@ -160,7 +161,7 @@ def order(idcustomer):
 
 
 def serverflaskstart():
-    app.run(debug=True, host='25.19.103.131')
+    app.run(debug=True, host='localhost')
 
 
 if __name__ == '__main__':
