@@ -1,3 +1,4 @@
+import pymysql
 from flask import app, Flask, jsonify
 from flask_cors import CORS
 from flaskext.mysql import MySQL
@@ -5,21 +6,22 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-cors = CORS(app, origins=["http://localhost:63342", "http://127.0.0.1:5500"])
+cors = CORS(app, origins=["http://localhost:63342", "http://127.0.0.1:5500", "http://localhost:5000"])
 
 mysql = MySQL()
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'pythonuser'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'SSME6315-020302D'
 app.config['MYSQL_DATABASE_DB'] = 'motorcycleshop'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_HOST'] = 'db'
 mysql.init_app(app)
 
 
 @app.route("/customer/", methods=['GET'])
 def customer():
     select_query = f"SELECT * FROM motorcycleshop.customer"
-    cursor = mysql.get_db().cursor()
+    conn = mysql.connect()
+    cursor = conn.cursor()
     cursor.execute(select_query)
     res = cursor.fetchall()
     jsonobj = dict()
@@ -161,7 +163,7 @@ def order(idcustomer):
 
 
 def serverflaskstart():
-    app.run(debug=True, host='localhost')
+    app.run(debug=True, host='0.0.0.0')
 
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-version: "1.1"
+version: "3"
 services:
   app:
     build:
@@ -10,13 +10,11 @@ services:
       - "5000:5000"
 
   db:
-      image: mysql
+      image: mysql:8.0.33
       ports:
-        - "3308:3306"
+        - "30000:3306"
       restart: always
       environment:
         MYSQL_ROOT_PASSWORD: SSME6315-020302D
-        MYSQL_DATABASE: motorcycleshop
-        MYSQL_HOST: 127.0.0.1
       volumes:
         - ./db:/docker-entrypoint-initdb.d/:ro
