@@ -1,4 +1,4 @@
-let productsUrl = 'http://25.19.103.131:5000/product/';
+let productsUrl = 'http://localhost:5000/product/';
 let link = 'https://jsonplaceholder.org/posts';
 
 let product = document.querySelector('.all-products__wrapper')
