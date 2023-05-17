@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: 2023-6315-1/dockerfile
+      dockerfile: /Users/edavkinstepan/2023-6315-1/dockerfile
     links:
       - db
     ports:
