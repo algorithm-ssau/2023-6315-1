@@ -39,3 +39,19 @@
     padding-bottom: 8px;
     border-bottom: 1px solid #2F3035;
 }
+
+
+.all-products {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+
+.all-products__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;  
+}
+.all-products__wrapper a {
+    color: black;
+}
