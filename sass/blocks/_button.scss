@@ -8,6 +8,7 @@
     text-transform: uppercase;
     margin-left: -8px;
     border-radius: 3px;
+    background-image: url('./img/cards/Vector.svg');
 }
 .btn-gray {
     padding: 15px 43px;
@@ -30,4 +31,8 @@
 }
 .category-wrapper {
     margin-bottom: 25px;
+}
+
+.smart-basket__min-icon {
+    width: 30px;
 }

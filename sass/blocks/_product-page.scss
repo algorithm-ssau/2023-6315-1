@@ -29,7 +29,7 @@
 }
 .product-page-list {
     margin-bottom: 20px;
-    width: 436px;
+    width: 235px;
 }
 .product-page-list > * {
     margin-bottom: 15px;
@@ -39,7 +39,9 @@
     padding-bottom: 8px;
     border-bottom: 1px solid #2F3035;
 }
-
+.product-page-list-item span {
+    margin-left: 30px;
+}
 
 .all-products {
     padding-top: 80px;
@@ -50,7 +52,7 @@
 .all-products__wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 28px;  
+    gap: 20px;  
 }
 .all-products__wrapper a {
     color: black;
