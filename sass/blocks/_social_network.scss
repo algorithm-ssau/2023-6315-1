@@ -5,7 +5,11 @@
         margin-right: 0;
     }
 }
+.social-network a.img:first-child {
+    height: 30px;
+}
 .social-network {
+    height: 30px;
     font-size: 0px;
     vertical-align: middle;
     align-items: baseline;
@@ -13,4 +17,7 @@
 
 .img-center {
     vertical-align: center;
+}
+.imgHeight {
+    height: 30px;
 }

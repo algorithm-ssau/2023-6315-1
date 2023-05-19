@@ -250,7 +250,11 @@ body > * {
   .social-network a:last-child {
     margin-right: 0; }
 
+.social-network a.img:first-child {
+  height: 30px; }
+
 .social-network {
+  height: 30px;
   font-size: 0px;
   vertical-align: middle;
   -webkit-box-align: baseline;
@@ -258,6 +262,9 @@ body > * {
 
 .img-center {
   vertical-align: center; }
+
+.imgHeight {
+  height: 30px; }
 
 .category {
   padding-bottom: 80px;
@@ -851,7 +858,6 @@ body > * {
     margin-right: 5px;
     width: 100%;
     text-align: start; } }
-    
 .smart-basket__product-delete {
   width: 100%;
   max-width: 100px;
@@ -1305,4 +1311,5 @@ body > * {
     stroke-dashoffset: -100; }
   100% {
     stroke-dashoffset: 900; } }
+
 /*# sourceMappingURL=main.css.map */
