@@ -8,7 +8,12 @@ services:
       - db
     ports:
       - "5000:5000"
-
+  web:
+    build:
+      context: .
+      dockerfile: /Users/edavkinstepan/2023-6315-1/Dockerfile.frontend
+    ports:
+      - "8080:80"
   db:
       image: mysql:8.0.33
       ports:

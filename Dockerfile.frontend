@@ -2,3 +2,5 @@
 FROM nginx:alpine
 #Указываем путь
 COPY . /usr/share/nginx/html
+#Указываем порт
+EXPOSE 80
