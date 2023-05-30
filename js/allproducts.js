@@ -19,7 +19,7 @@ async function getResponce() {
             product.innerHTML += `
             <div class="cards" data-id="${idProd}">
                 <p class="sale">SALE</p>
-                <img class="popular-products-cards-img"  src="${content[key].image}" alt="Рюкзак">
+                <img class="popular-products-cards-img"  src="${content[key].image}" alt="">
                 <h4 class="title-4">${content[key].model}</h4>
                 <div class="product__price"><span class="product__price-number">${content[key].price}</span> ₽</div>
                 <div class="product__quantity"></div>
@@ -33,7 +33,7 @@ async function getResponce() {
         } else {
             product.innerHTML += `
             <div class="cards" data-id="${idProd}">
-                <img class="popular-products-cards-img"  src="${content[key].image}" alt="Рюкзак">
+                <img class="popular-products-cards-img"  src="${content[key].image}" alt="">
                 <h4 class="title-4">${content[key].model}</h4>
                 <div class="product__price"><span class="product__price-number">${content[key].price}</span> ₽</div>
                 <div class="product__quantity"></div>

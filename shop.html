@@ -21,11 +21,9 @@
                     <img src="./img/icons/logo.svg" alt="Логотип">
                 </div>
                 <div class="header-nav-info">
-                    <p class="adress">Москва,  ул. Науки  25</p>
+                    <p class="adress">Самара,  улица Гая, 43</p>
                     <div class="user-links">
-                        <a href=""><img src="./img/icons/liked.svg" alt="Понравившиеся"></a>
-                        <a href="./registration.html"><img src="./img/icons/user.svg" alt="Пользователь"></a>
-                        <a href=""><img src="./img/icons/cart.svg" alt="Корзина"></a>
+                        <a href="./registration.html"><img src="./img/icons/user.svg" alt="Пользователь"></a>        
                     </div>
                 </div>
 
@@ -34,7 +32,7 @@
                 <ul class="header-category-list">
                     <li class="header-category-list-item"><a href="#">Квадроциклы</a></li>
                     <li class="header-category-list-item"><a href="#">Катера</a></li>
-                    <li class="header-category-list-item"><a href="#">Гидроциклы</a></li>
+                    <li class="header-category-list-item"><a href="./catalog.html">Гидроциклы</a></li>
                     <li class="header-category-list-item"><a href="#">Лодки</a></li>
                     <li class="header-category-list-item"><a href="#">Вездеходы</a></li>
                     <li class="header-category-list-item"><a href="#">Снегоходы</a></li>
@@ -112,4 +110,32 @@
             </div>            
         </div>        
     </footer>
+
+    <script src="js/allproducts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <div class="smart-basket__wrapper"></div>
+    <script src="./smartbasket/js/smartbasket.min.js"></script>
+	<script>
+		$(function () {
+			$('.smart-basket__wrapper').smbasket({
+				productElement: 'cards',
+				buttonAddToBasket: 'cart',
+				productPrice: 'product__price-number',
+				productSize: 'product__size-element',
+				
+				productQuantityWrapper: 'product__quantity',
+				smartBasketMinArea: 'user-links',
+				countryCode: '+7',
+				smartBasketCurrency: '₽',
+				smartBasketMinIconPath: './smartbasket/img/shopping-basket-wight.svg',
+
+				agreement: {
+					isRequired: true,
+					isChecked: true,
+					isLink: 'https://artstranger.ru/privacy.html',
+				},
+				nameIsRequired: false,
+			});
+		});
+	</script>
 </body>
