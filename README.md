@@ -33,15 +33,6 @@
 Рис. 2 – Страница «По категориям»
 
 
-
-![rpic3](img/readme_pics/readme_pic3.png)  
-Рис. 3 – Страница категорий
-
-
-
-![rpic4](img/readme_pics/readme_pic4.png)  
-Рис. 4 – Страница товара
-
 ## Языки программирования
 * HTML
 * CSS
