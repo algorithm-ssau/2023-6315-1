@@ -8,7 +8,7 @@ let product = document.querySelector('.popular-products-cards')
 let idProd = 0;
 
 async function getResponce() {
-    let responce = await fetch(link);
+    let responce = await fetch(productsUrl);
     let content = await responce.json();
     console.log(content);
     let key;
